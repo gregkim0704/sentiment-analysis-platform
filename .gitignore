@@ -1,0 +1,71 @@
+# 의존성 디렉토리
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 빌드 결과물
+/frontend/build/
+/frontend/dist/
+*.egg-info/
+build/
+dist/
+
+# 환경 변수 파일
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 로그 파일
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 생성 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 데이터베이스
+*.db
+*.sqlite
+*.sqlite3
+
+# 임시 파일
+*.tmp
+*.temp
+
+# 캐시
+.cache/
+.parcel-cache/
+
+# 테스트 커버리지
+coverage/
+.nyc_output/
+
+# Railway 로컬 파일
+.railway/
+
+# Fly.io 로컬 파일
+.fly/

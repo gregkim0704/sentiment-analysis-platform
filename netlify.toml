@@ -1,0 +1,32 @@
+[build]
+  # 빌드 명령어
+  command = "cd frontend && npm run build"
+  
+  # 빌드 결과물이 생성되는 디렉토리
+  publish = "frontend/build"
+
+[build.environment]
+  # Node.js 버전 지정
+  NODE_VERSION = "18"
+
+# SPA 라우팅을 위한 리다이렉트 설정
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API 프록시 설정 (백엔드가 별도로 배포된 경우)
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-backend-url.com/api/:splat"
+  status = 200
+  force = true
+
+# 보안 헤더 설정
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

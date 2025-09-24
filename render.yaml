@@ -1,0 +1,31 @@
+# Render 배포 설정
+services:
+  # 백엔드 + 프론트엔드 통합 서비스
+  - type: web
+    name: sentiment-analysis-app
+    env: python
+    buildCommand: |
+      # 프론트엔드 빌드
+      cd frontend && npm install && npm run build
+      # 백엔드 의존성 설치
+      cd ../backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: NODE_VERSION
+        value: 18.17.0
+    
+  # PostgreSQL 데이터베이스 (무료 90일)
+  - type: pserv
+    name: sentiment-analysis-db
+    env: postgresql
+    plan: free
+    
+# 환경 변수
+envVars:
+  - key: DATABASE_URL
+    fromService:
+      type: pserv
+      name: sentiment-analysis-db
+      property: connectionString

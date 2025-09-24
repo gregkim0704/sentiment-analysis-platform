@@ -24,7 +24,7 @@ import {
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { dashboardService } from '@/services/dashboardService';
+import { dashboardService } from '../../services/dashboardService';
 
 interface AlertPanelProps {
   companyId: number;

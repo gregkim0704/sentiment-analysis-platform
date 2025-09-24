@@ -14,7 +14,7 @@ import {
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 import { useQuery } from 'react-query';
-import { dashboardService } from '@/services/dashboardService';
+import { dashboardService } from '../../services/dashboardService';
 
 interface RecentNewsProps {
   companyId: number;

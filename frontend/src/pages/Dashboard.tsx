@@ -25,13 +25,13 @@ import { useQuery } from 'react-query';
 import { format } from 'date-fns';
 import { ko } from 'date-fns/locale';
 
-import SentimentChart from '@/components/Charts/SentimentChart';
-import StakeholderChart from '@/components/Charts/StakeholderChart';
-import TrendChart from '@/components/Charts/TrendChart';
-import RecentNews from '@/components/Dashboard/RecentNews';
-import AlertPanel from '@/components/Dashboard/AlertPanel';
-import { dashboardService } from '@/services/dashboardService';
-import { Company, StakeholderType } from '@/types';
+import SentimentChart from '../components/Charts/SentimentChart';
+import StakeholderChart from '../components/Charts/StakeholderChart';
+import TrendChart from '../components/Charts/TrendChart';
+import RecentNews from '../components/Dashboard/RecentNews';
+import AlertPanel from '../components/Dashboard/AlertPanel';
+import { dashboardService } from '../services/dashboardService';
+import { Company, StakeholderType } from '../types';
 
 const Dashboard: React.FC = () => {
   const [selectedCompany, setSelectedCompany] = useState<number | ''>('');

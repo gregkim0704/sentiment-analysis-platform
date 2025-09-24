@@ -37,7 +37,8 @@
     "@hookform/resolvers": "^3.3.2",
     
     "notistack": "^3.0.1",
-    "react-helmet-async": "^2.0.4"
+    "react-helmet-async": "^2.0.4",
+    "react-router-dom": "^6.20.1"
   },
   "scripts": {
     "start": "react-scripts start",

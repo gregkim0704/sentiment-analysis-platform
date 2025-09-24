@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
-import { Helmet } from 'react-helmet-async';
 
 import { useAuth } from './contexts/AuthContext';
 import Layout from './components/Layout/Layout';
@@ -49,13 +48,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>센티멘트 분석 플랫폼</title>
-        <meta name="description" content="멀티 스테이크홀더 센티멘트 분석 플랫폼" />
-      </Helmet>
-
-      <React.Suspense fallback={<LoadingFallback />}>
+    <React.Suspense fallback={<LoadingFallback />}>
         <Routes>
           {/* 로그인 페이지 */}
           <Route
@@ -133,7 +126,6 @@ const App: React.FC = () => {
           />
         </Routes>
       </React.Suspense>
-    </>
   );
 };
 
